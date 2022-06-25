@@ -1,0 +1,7 @@
+<app-table 
+    [items]="products" 
+    [offset]="offset" 
+    [totalRecords]="totalRecords" 
+    [columns]="columns" 
+    (nextPageEvent)="getProducts({limit: $event.limit, offset: $event.offset})">
+</app-table>

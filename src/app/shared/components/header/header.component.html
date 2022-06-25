@@ -1,0 +1,8 @@
+<div class="d-flex justify-content-between">
+    <button class="mr-auto" (click)="toggleSideBar()">Toggle</button>
+
+    <div>
+        <i *ngIf="isAdd" role="button" class="bi bi-plus-circle-fill" (click)="add()"></i>
+        <i *ngIf="isEdit" role="button" class="bi bi-pencil-fill" (click)="edit()"></i>
+    </div>
+</div>

@@ -1,3 +1,5 @@
-<p>easy rent panel</p>
-
 <router-outlet></router-outlet>
+
+<ng-container *ngIf="loading$ | async">
+    <app-loader></app-loader>
+</ng-container>

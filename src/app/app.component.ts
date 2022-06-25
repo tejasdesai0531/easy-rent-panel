@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UIService } from './core/services/ui/ui.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'easy-rent-panel';
+  
+  loading$ = this.uIService.loading$
+
+  constructor(
+    private uIService: UIService
+  ) {
+    console.log(this.loading$)
+  }
+
+  ngOnInit(): void {
+  }
 }
