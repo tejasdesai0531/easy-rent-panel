@@ -1,0 +1,4 @@
+<div class="form__div">
+    <input class="form__input" [ngClass]="{'input-error': hasError(), 'focused': isFocused && !hasError()}" (focus)="onFocus()" (blur)="onBlur()" placeholder=" " [(ngModel)]="value" (input)="onValueChange()">
+    <label for="" class="form__label" [ngClass]="{'label-error': hasError(), 'form_label_valid': isFocused}">Email</label>
+</div>

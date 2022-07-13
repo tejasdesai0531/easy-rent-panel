@@ -75,12 +75,13 @@ export class ListProductComponent implements OnInit {
           this.uIService.stopLoadingIndicator()
           this.uIService.showSuccessMsg(response.msg)
 
-          this.products = response.data.products
+          this.products = response.data.product
           this.totalRecords = response.data.totalRecords
           this.offset = page.offset
         },
         error: (err) => {
-          console.log(err)
+          this.uIService.stopLoadingIndicator()
+          this.uIService.showErrorMsg("Something went wrong")
         }
       }
     )

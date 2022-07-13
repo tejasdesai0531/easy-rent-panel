@@ -16,4 +16,11 @@ export class ProductService {
         return data
       }))
   }
+
+  addProduct(product: any): Observable<any> {
+    return this.__http.requestCall('api/product', ApiMethod.POST, product)
+      .pipe(map(data => {
+        return data
+      }))
+  }
 }

@@ -1,1 +1,49 @@
-<p>add-product works!</p>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div class="container">
+
+        <h1>Add Product</h1><br>
+
+        <button (click)="isVisible = !isVisible">Toggle</button>
+
+        <app-dialog [showDialog]="isVisible">
+            <button left>Left</button>
+            <button right>Right</button>
+        </app-dialog>
+
+        <div class="row"> 
+            <div class="col-md-4">
+                <div class="form-group">
+                    <app-input formControlName="name" [error]="false"></app-input>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Charge Per Day</mat-label>
+                    <input matInput type="number" formControlName="charge_per_day" placeholder="Enter Charge Per Day">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Image URL</mat-label>
+                    <input matInput formControlName="image_url" placeholder="Enter Image URL">
+                    <mat-error>This field is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Visibility</mat-label>
+                    <mat-select formControlName="visibility">
+                      <mat-option [value]="0">False</mat-option>
+                      <mat-option [value]="1">True</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+        </div>
+    
+        <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-primary btn-lg" type="submit">Save</button>
+            <button class="btn btn-success btn-lg" type="reset">Revert</button>
+        </div>
+    </div>
+</form>
